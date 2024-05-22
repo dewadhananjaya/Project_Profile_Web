@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css"> <!-- Referensi ke pustaka Feather Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Menggunakan font */
+            margin: 0; /* Menghapus margin bawaan dari body */
+            padding: 0; /* Menghapus padding bawaan dari body */
+            box-sizing: border-box; /* Properti ini mengatur model kotak (box model) untuk semua elemen dalam halaman menjadi "border-box". Dalam model ini, lebar dan tinggi elemen meliputi padding dan border, sehingga ukuran total elemen tetap konsisten meskipun ditambahkan padding dan border. Ini membantu dalam mengatur tata letak dan desain elemen dengan lebih mudah dan konsisten. */
+            background: linear-gradient(to bottom, #87ceeb, #4682b4); /* Gradasi warna biru cerah */
+            color: #333; /* Warna abu-abu tua */
+            background-image: url('img/background-foto-html.jpg'); /* menambahkan gambar pada latar belakang */
+            background-size: cover; /* Properti ini mengatur ukuran latar belakang elemen <body> sehingga selalu menutupi seluruh area elemen tersebut, tanpa distorsi, dan sebaik mungkin. Ini berguna saat menggunakan gambar sebagai latar belakang, karena memastikan bahwa gambar latar belakang selalu mengisi seluruh area elemen body tanpa meninggalkan area kosong di mana latar belakang asli mungkin terlihat. */
+            background-repeat: no-repeat; /* Properti ini mengatur agar gambar latar belakang tidak diulang di dalam elemen body. Dengan kata lain, jika gambar latar belakang tidak cukup besar untuk menutupi seluruh area elemen body, maka gambar tersebut tidak akan diulang untuk mengisi area yang tidak tercakup oleh gambar tersebut. Ini memastikan bahwa gambar latar belakang hanya ditampilkan satu kali dan tidak diulang, menciptakan efek visual yang bersih dan konsisten. */
+            background-attachment: fixed; /* Tetap di tempat saat digulir */
+        }
+        .container {
+            max-width: 800px; /* Properti ini mengatur lebar maksimum dari elemen dengan kelas ".container" menjadi 800 piksel. Ini berarti elemen tersebut tidak akan melebihi lebar 800 piksel, bahkan jika ruang tampilan (viewport) lebih besar dari itu. Pengaturan maksimum ini membantu memastikan bahwa konten tidak akan terlalu melebar pada layar yang sangat lebar, menjaga kemudahan membaca dan tata letak yang lebih terkendali. */
+            margin: 0 auto; /* Properti ini mengatur margin vertikal (atas dan bawah) menjadi 0 dan margin horizontal (kiri dan kanan) secara otomatis diatur agar elemen dengan kelas ".container" berada di tengah horizontal dari kontainer induknya. Dengan kata lain, margin atas dan bawah elemen diatur menjadi 0, sementara margin kiri dan kanan diatur secara otomatis agar elemen tersebut terpusat di tengah horizontal. */
+            padding: 20px; /*  Properti ini memberikan padding (ruang tambahan di dalam batas elemen) sebesar 20 piksel di sekitar konten dalam elemen dengan kelas ".container". Padding membantu membuat konten dalam elemen tersebut tidak terlalu dekat dengan batas elemen, memberikan ruang tambahan antara konten dan tepi elemen. Dalam hal ini, padding sebesar 20 piksel diberikan di sekitar konten, menciptakan ruang tambahan yang membuat konten lebih mudah dibaca dan lebih terpisah dari tepi elemen. */
+            height: 100vh; /* Mengisi tinggi sesuai tinggi viewport */
+            display: flex; /* Mengubah elemen dengan kelas .container menjadi flex container. Ini berarti elemen-anak di dalamnya akan diatur sebagai flex items, dan properti-properti CSS yang terkait dengan flexbox akan mulai berlaku. Secara default, flex container akan mengatur anak-anaknya dalam satu baris (baris tunggal) secara horizontal. */
+            justify-content: center; /* Memposisikan konten secara horizontal di tengah */
+            align-items: center; /* Memposisikan konten secara vertikal di tengah */
+            background: transparent; /* Menghapus latar belakang kontainer */
+        }
+        .profile {
+            text-align: center; /* Properti ini mengatur penataan teks di dalam elemen dengan kelas ".profile" agar berada di tengah secara horizontal. Dengan kata lain, teks di dalam elemen tersebut akan diposisikan di tengah-tengah lebar elemen. */
+            margin-bottom: 30px; /* Properti ini memberikan margin bawah sebesar 30 piksel pada elemen dengan kelas ".profile". Margin adalah ruang tambahan di sekitar elemen yang memisahkan elemen tersebut dari elemen lain di sekitarnya. Dengan memberikan margin bawah sebesar 30 piksel, elemen ".profile" akan memiliki ruang tambahan sebesar 30 piksel di bagian bawahnya sebelum elemen lainnya dimulai. Ini dapat digunakan untuk memberikan jarak antara elemen ".profile" dengan elemen lain di bawahnya, menciptakan tata letak yang lebih teratur dan mudah dibaca. */
+        }
+        .profile-card {
+            width: 100%; /* Lebar card mengikuti lebar kontainer */
+            max-width: 720px; /* Lebar maksimum card */
+            background-color: #fff; /* Memberikan warna latar belakang putih */
+            border-radius: 50px; /* Memuluskan sudut card */
+            padding: 30px; /* Padding di dalam card */
+        }
+        .profile img {
+            /* Properti ini mengatur lebar dan tinggi elemen gambar (img) menjadi 150 piksel. Dengan mengatur lebar dan tinggi, Anda dapat mengontrol ukuran dimensi dari gambar tersebut. */
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%; /* Properti ini mengatur radius lengkungan sudut gambar menjadi 50% dari lebar atau tingginya, menjadikan gambar menjadi lingkaran. Dengan nilai 50%, sudut-sudut gambar akan melengkung hingga membentuk lingkaran, karena radius lengkungannya setengah dari dimensi terbesar (lebar atau tinggi) gambar. */
+            object-fit: cover; /* Properti ini mengatur bagaimana gambar diatur dalam kotak yang ditentukan oleh width dan height. Nilai "cover" membuat gambar diatur sedemikian rupa sehingga seluruh area kotak tercakup oleh gambar, sementara aspek rasionya dipertahankan. Jika aspek rasio gambar tidak sama dengan aspek rasio kotak, maka gambar akan dipotong sehingga seluruh area kotak tercakup. Dengan kata lain, "cover" memastikan bahwa gambar akan diubah ukurannya untuk mengisi seluruh area kotak tanpa distorsi, dan jika perlu, bagian dari gambar yang melebihi area kotak akan dipotong. Ini sering digunakan untuk memastikan gambar profil atau gambar lainnya diatur dengan baik dan proporsional dalam kotak yang ditentukan. */
+            margin-bottom: 20px; /* Jarak bawah antara gambar profil dan teks */
+
+            /* Menambahkan bayangan untuk membuat foto profil lebih menonjol */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Bayangan hitam dengan opasitas 50% */
+
+            cursor: pointer; /* Menjadikan kursor menjadi tanda tangan ketika diarahkan ke gambar profil */
+        }
+        .overlay {
+            position: fixed; /* Properti ini mengatur posisi elemen menjadi tetap relatif terhadap tampilan browser. Artinya, elemen akan tetap berada di lokasi yang ditentukan relatif terhadap jendela browser, bahkan ketika pengguna menggulir halaman. */
+            
+            /* Properti ini mengatur elemen .overlay agar menempel pada sudut kiri atas (koordinat 0,0) dari tampilan browser. Dengan demikian, overlay akan mengisi seluruh area browser dari sudut kiri atas. */
+            top: 0;
+            left: 0;
+
+            /* Properti ini mengatur lebar dan tinggi elemen .overlay menjadi 100% dari lebar dan tinggi tampilan browser. Ini akan membuat overlay menutupi seluruh area tampilan browser. */
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang overlay */
+            display: none; /* Properti ini mengatur elemen .overlay untuk tidak ditampilkan pada awalnya. Dengan demikian, overlay akan disembunyikan dari tampilan pengguna ketika halaman dimuat. */
+            justify-content: center; /* Properti ini mengatur tata letak horizontal dari isi elemen .overlay agar berada di tengah. Ini akan memposisikan isi overlay secara horizontal di tengah tampilan browser. */
+            align-items: center; /* Properti ini mengatur tata letak vertikal dari isi elemen .overlay agar berada di tengah. Ini akan memposisikan isi overlay secara vertikal di tengah tampilan browser. */
+        }
+        .overlay img {
+            max-width: 90%; /* Lebar maksimum gambar dalam overlay */
+            max-height: 90%; /* Tinggi maksimum gambar dalam overlay */
+            border-radius: 10px; /* menentukan radius lengkungan sudut-sudut tersebut menjadi 10 piksel. Semakin tinggi nilai radius, semakin melengkung sudut-sudutnya. Dengan menggunakan nilai 10 piksel, sudut-sudut elemen akan melengkung dengan jari-jari sebesar 10 piksel, menciptakan tampilan yang lebih lembut dan estetis. */
+        }
+        .profile h1 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #333; /* Warna abu-abu tua */
+            margin: 10px 0; /* Jarak atas dan bawah dari nama */
+            white-space: nowrap; /* Mengatur agar nama tetap memanjang horizontal */
+        }
+        .social-links {
+            display: flex; /* digunakan untuk membuat elemen .social-links menjadi sebuah flex container. Sebagai flex container, elemen .social-links akan mengatur child elements-nya dalam satu baris (secara default) dan memberikan kontrol tambahan terhadap penataan posisi dan ukuran mereka. */
+            justify-content: center; /*  akan membuat flex items (elemen-elemen di dalam .social-links) ditempatkan di tengah-tengah flex container secara horizontal. Artinya, jika ada ruang tambahan di sepanjang sumbu utama, elemen-elemen tersebut akan diatur sehingga posisi mereka berpusat. */
+            margin-top: 20px; /* Tambahan margin atas untuk ikon sosial */
+        }
+        .social-links a {
+            margin: 0 10px; /* Properti margin digunakan untuk mengatur ruang di sekitar elemen. Nilai 0 pada sisi atas dan bawah mengatur margin atas dan bawah elemen menjadi nol, sedangkan nilai 10px pada sisi kiri dan kanan mengatur margin kiri dan kanan elemen menjadi 10 piksel. Dengan kata lain, ini memberikan margin 10 piksel di sebelah kiri dan kanan elemen, sementara tidak ada margin di atas dan bawahnya. */
+            text-decoration: none; /* digunakan untuk menghapus semua dekorasi teks seperti garis bawah. Ini sering digunakan untuk menghilangkan garis bawah dari tautan (links) di dalam elemen a (<a>), sehingga tautan tersebut tidak terlihat seperti tautan yang biasa. */
+            color: #333; /* memberikan warna abu-abu tua */
+            transition: color 0.3s ease; /* efek transisi diterapkan pada perubahan warna (color) elemen. Transisi ini akan berlangsung selama 0.3 detik (0.3s) dengan fungsi waktu (ease) yang memberikan perpindahan yang halus antara nilai-nilai yang berubah. Jadi, ketika warna teks berubah, transisi akan membuat perubahan tersebut terlihat lebih halus. */
+            display: flex; /* Mengatur tautan menjadi flex container */
+            align-items: center; /* Menyusun ikon dan teks secara vertikal */
+        }
+        .social-links a svg {
+            margin-right: 5px; /* Memberikan jarak ke ikon di sebelah kanan */
+        }
+        .social-links a:hover {
+            color: #007bff; /* memberikan warna biru cerah */
+        }
+</style>
+    </style>
+</head>
+
+<body>
+    <!-- Struktur dari profile card -->
+    <div class="container">
+        <div class="card profile-card">
+            <div class="card-body">
+        <div class="profile text-center">
+            <img src="img/ProfilePicture.jpg" alt="Profile Picture" onclick="showProfilePicture()">
+            <h1>Dewa Bagus Putu Arya Dhananjaya</h1>
+        </div>
+        <!-- Overlay untuk menampilkan gambar dalam ukuran besar -->
+        <div class="overlay" onclick="hideProfilePicture()">
+            <img src="img/ProfilePicture.jpg" alt="Profile Picture">
+        </div>
+        <script>
+            // Fungsi untuk menampilkan gambar profil dalam ukuran besar
+            function showProfilePicture() {
+                var overlay = document.querySelector('.overlay');
+                overlay.style.display = 'flex';
+            }
+            // Fungsi untuk menyembunyikan gambar profil dalam ukuran besar saat overlay diklik
+            function hideProfilePicture() {
+                var overlay = document.querySelector('.overlay');
+                overlay.style.display = 'none';
+            }
+        </script>
+        </div>
+
+        <!-- Link tautan sosial media -->
+        <div class="social-links">
+            <a href="https://facebook.com/dewa.dhanan.5" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                </path>
+                </svg>
+                Facebook
+            </a>
+            <a href="https://linkedin.com/in/dewa-bagus-putu-arya-dhananjaya-44b084245" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                LinkedIn
+            </a>
+            <a href="https://twitter.com/dewadhanan25" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><title>Twitter icon</title>
+                    <path d="M22.46 6.62c-.78.34-1.62.58-2.5.69a4.33 4.33 0 0 0 1.9-2.42 8.68 8.68 0 0 1-2.74 1.05 4.34 4.34 0 0 0-7.41 3.95c-3.61-.18-6.8-1.9-8.95-4.51a4.31 4.31 0 0 0-.59 2.18c0 1.5.78 2.82 1.95 3.59a4.3 4.3 0 0 1-1.96-.54v.06a4.34 4.34 0 0 0 3.46 4.24c-.53.14-1.1.22-1.68.22-.41 0-.82-.04-1.22-.11a12.23 12.23 0 0 0 6.63 1.94c7.92 0 12.26-6.56 12.26-12.26 0-.19 0-.37-.01-.56.84-.61 1.56-1.38 2.14-2.26z"/>
+                </svg>
+                Twitter
+            </a>
+            <a href="https://instagram.com/dewadhanan" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>><title>Instagram icon</title>
+                    <path d="M16 11a4 4 0 0 1-8 0 4 4 0 0 1 8 0z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+                Instagram
+            </a>
+        </div> 
+    </div>
+</body>
+</html>
