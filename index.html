@@ -12,13 +12,8 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Menggunakan font */
             margin: 0; /* Menghapus margin bawaan dari body */
             padding: 0; /* Menghapus padding bawaan dari body */
-            box-sizing: border-box; /* Properti ini mengatur model kotak (box model) untuk semua elemen dalam halaman menjadi "border-box". Dalam model ini, lebar dan tinggi elemen meliputi padding dan border, sehingga ukuran total elemen tetap konsisten meskipun ditambahkan padding dan border. Ini membantu dalam mengatur tata letak dan desain elemen dengan lebih mudah dan konsisten. */
-            background: linear-gradient(to bottom, #87ceeb, #4682b4); /* Gradasi warna biru cerah */
-            color: #333; /* Warna abu-abu tua */
             background-image: url('img/background-foto-html.png'); /* menambahkan gambar pada latar belakang */
             background-size: cover; /* Properti ini mengatur ukuran latar belakang elemen <body> sehingga selalu menutupi seluruh area elemen tersebut, tanpa distorsi, dan sebaik mungkin. Ini berguna saat menggunakan gambar sebagai latar belakang, karena memastikan bahwa gambar latar belakang selalu mengisi seluruh area elemen body tanpa meninggalkan area kosong di mana latar belakang asli mungkin terlihat. */
-            background-repeat: no-repeat; /* Properti ini mengatur agar gambar latar belakang tidak diulang di dalam elemen body. Dengan kata lain, jika gambar latar belakang tidak cukup besar untuk menutupi seluruh area elemen body, maka gambar tersebut tidak akan diulang untuk mengisi area yang tidak tercakup oleh gambar tersebut. Ini memastikan bahwa gambar latar belakang hanya ditampilkan satu kali dan tidak diulang, menciptakan efek visual yang bersih dan konsisten. */
-            background-attachment: fixed; /* Tetap di tempat saat digulir */
         }
         .container {
             max-width: 800px; /* Properti ini mengatur lebar maksimum dari elemen dengan kelas ".container" menjadi 800 piksel. Ini berarti elemen tersebut tidak akan melebihi lebar 800 piksel, bahkan jika ruang tampilan (viewport) lebih besar dari itu. Pengaturan maksimum ini membantu memastikan bahwa konten tidak akan terlalu melebar pada layar yang sangat lebar, menjaga kemudahan membaca dan tata letak yang lebih terkendali. */
@@ -28,7 +23,6 @@
             display: flex; /* Mengubah elemen dengan kelas .container menjadi flex container. Ini berarti elemen-anak di dalamnya akan diatur sebagai flex items, dan properti-properti CSS yang terkait dengan flexbox akan mulai berlaku. Secara default, flex container akan mengatur anak-anaknya dalam satu baris (baris tunggal) secara horizontal. */
             justify-content: center; /* Memposisikan konten secara horizontal di tengah */
             align-items: center; /* Memposisikan konten secara vertikal di tengah */
-            background: transparent; /* Menghapus latar belakang kontainer */
         }
         .profile {
             text-align: center; /* Properti ini mengatur penataan teks di dalam elemen dengan kelas ".profile" agar berada di tengah secara horizontal. Dengan kata lain, teks di dalam elemen tersebut akan diposisikan di tengah-tengah lebar elemen. */
@@ -101,6 +95,19 @@
         .social-links a:hover {
             color: #007bff; /* memberikan warna biru cerah */
         }
+        /* responsif web */
+        @media screen and (max-width: 550px) {
+        .profile h1 {
+            white-space: inherit;
+        }
+        .social-links {
+            display: inline;
+            margin-bottom: 10px;
+        }
+        .social-links a svg {
+            margin-bottom: 5px;
+        }
+}
     </style>
 </head>
 
